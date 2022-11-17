@@ -1,0 +1,21 @@
+module trans/java/classes/InstanceInitializers
+
+imports
+
+  trans/sig/java/classes/InstanceInitializers-sig
+
+  trans/java/classes/Main
+  trans/java/names/Main
+  trans/java/statements/Blocks
+
+
+rules // 8.6. Instance Initializers
+
+  instInitOk : scope * InstanceInitializer
+
+  instInitOk(s, InstanceInit(blk)) :-
+  {s_init}
+    new s_init,
+    s_init -LEX-> s,
+    blkOk(s_init, blk).
+

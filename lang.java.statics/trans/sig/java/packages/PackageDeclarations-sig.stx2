@@ -1,0 +1,18 @@
+module trans/sig/java/packages/PackageDeclarations-sig
+
+imports
+  trans/sig/java/lexical/Identifiers-sig
+  trans/sig/java/interfaces/Annotations-sig
+
+signature
+
+  sorts
+    PackageDeclaration
+
+  constructors
+    PackageDeclaration-Plhdr : PackageDeclaration
+
+signature
+
+  constructors
+    PackageDeclaration : list(Annotation) * list(Id) -> PackageDeclaration

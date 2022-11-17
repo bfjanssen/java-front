@@ -4,7 +4,7 @@ name: metaborg-java-statics
 dependencies:
   compile:
   - org.metaborg:org.metaborg.meta.lang.esv:${metaborgVersion}
-  - org.metaborg:statix.lang:${metaborgVersion}
+  - org.metaborg:statix2.lang:${metaborgVersion}
   source:
   - org.metaborg:meta.lib.spoofax:${metaborgVersion}
   - org.metaborg:statix.runtime:${metaborgVersion}

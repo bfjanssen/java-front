@@ -1,0 +1,19 @@
+module trans/sig/java/packages/CompilationUnits-sig
+
+imports
+  trans/sig/java/packages/PackageDeclarations-sig
+  trans/sig/java/packages/ImportDeclarations-sig
+  trans/sig/java/packages/TypeDeclarations-sig
+
+signature
+
+  sorts
+    CompilationUnit
+
+  constructors
+    CompilationUnit-Plhdr : CompilationUnit
+
+signature
+
+  constructors
+    CompilationUnit : list(PackageDeclaration) * list(ImportDeclaration) * list(TypeDeclaration) -> CompilationUnit

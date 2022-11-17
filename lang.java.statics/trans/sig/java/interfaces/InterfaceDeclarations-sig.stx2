@@ -1,0 +1,45 @@
+module trans/sig/java/interfaces/InterfaceDeclarations-sig
+
+imports
+  trans/sig/java/lexical/Identifiers-sig
+  trans/sig/java/lexical/Modifiers-sig
+  trans/sig/java/lexical/SemiColon-sig
+  trans/sig/java/classes/ClassDeclarations-sig
+  trans/sig/java/types/ReferenceTypes-sig
+  trans/sig/java/interfaces/Annotations-sig
+  trans/sig/java/interfaces/ConstantDeclarations-sig
+  trans/sig/java/interfaces/InterfaceMethodDeclarations-sig
+  trans/sig/java/interfaces/AnnotationTypes-sig
+
+signature
+
+  sorts
+    InterfaceDeclaration
+    InterfaceModifier
+    ExtendsInterfaces
+    InterfaceMemberDeclaration
+
+  constructors
+    InterfaceDeclaration-Plhdr : InterfaceDeclaration
+    InterfaceModifier-Plhdr : InterfaceModifier
+    ExtendsInterfaces-Plhdr : ExtendsInterfaces
+    InterfaceMemberDeclaration-Plhdr : InterfaceMemberDeclaration
+
+signature
+
+  constructors
+    NormalInterface : list(InterfaceModifier) * Id * list(TypeParameters) * list(ExtendsInterfaces) * list(InterfaceMemberDeclaration) -> InterfaceDeclaration
+    AnnotationTypeDeclaration2InterfaceDeclaration : AnnotationTypeDeclaration -> InterfaceDeclaration
+    Annotation2InterfaceModifier : Annotation -> InterfaceModifier
+    Public2InterfaceModifier : Public -> InterfaceModifier
+    Protected2InterfaceModifier : Protected -> InterfaceModifier
+    Private2InterfaceModifier : Private -> InterfaceModifier
+    Abstract2InterfaceModifier : Abstract -> InterfaceModifier
+    Static2InterfaceModifier : Static -> InterfaceModifier
+    Strictfp2InterfaceModifier : Strictfp -> InterfaceModifier
+    ExtendsInterfaces : list(ClassType) -> ExtendsInterfaces
+    ConstantDeclaration2InterfaceMemberDeclaration : ConstantDeclaration -> InterfaceMemberDeclaration
+    InterfaceMethodDeclaration2InterfaceMemberDeclaration : InterfaceMethodDeclaration -> InterfaceMemberDeclaration
+    ClassDeclaration2InterfaceMemberDeclaration : ClassDeclaration -> InterfaceMemberDeclaration
+    InterfaceDeclaration2InterfaceMemberDeclaration : InterfaceDeclaration -> InterfaceMemberDeclaration
+    SemiColon2InterfaceMemberDeclaration : SemiColon -> InterfaceMemberDeclaration

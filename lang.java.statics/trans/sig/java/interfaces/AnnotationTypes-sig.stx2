@@ -1,0 +1,43 @@
+module trans/sig/java/interfaces/AnnotationTypes-sig
+
+imports
+  trans/sig/java/interfaces/InterfaceDeclarations-sig
+  trans/sig/java/lexical/Identifiers-sig
+  trans/sig/java/lexical/Modifiers-sig
+  trans/sig/java/lexical/SemiColon-sig
+  trans/sig/java/types/ReferenceTypes-sig
+  trans/sig/java/classes/FieldDeclarations-sig
+  trans/sig/java/interfaces/ConstantDeclarations-sig
+  trans/sig/java/classes/ClassDeclarations-sig
+  trans/sig/java/interfaces/Annotations-sig
+
+signature
+
+  sorts
+    AnnotationTypeDeclaration
+    AnnotationTypeMemberDeclaration
+    AnnotationTypeElementDeclaration
+    AnnotationTypeElementModifier
+    DefaultValue
+
+  constructors
+    AnnotationTypeDeclaration-Plhdr : AnnotationTypeDeclaration
+    AnnotationTypeMemberDeclaration-Plhdr : AnnotationTypeMemberDeclaration
+    AnnotationTypeElementDeclaration-Plhdr : AnnotationTypeElementDeclaration
+    AnnotationTypeElementModifier-Plhdr : AnnotationTypeElementModifier
+    DefaultValue-Plhdr : DefaultValue
+
+signature
+
+  constructors
+    AnnoDec : list(InterfaceModifier) * Id * list(AnnotationTypeMemberDeclaration) -> AnnotationTypeDeclaration
+    AnnotationTypeElementDeclaration2AnnotationTypeMemberDeclaration : AnnotationTypeElementDeclaration -> AnnotationTypeMemberDeclaration
+    ConstantDeclaration2AnnotationTypeMemberDeclaration : ConstantDeclaration -> AnnotationTypeMemberDeclaration
+    ClassDeclaration2AnnotationTypeMemberDeclaration : ClassDeclaration -> AnnotationTypeMemberDeclaration
+    InterfaceDeclaration2AnnotationTypeMemberDeclaration : InterfaceDeclaration -> AnnotationTypeMemberDeclaration
+    SemiColon2AnnotationTypeMemberDeclaration : SemiColon -> AnnotationTypeMemberDeclaration
+    AnnotationTypeElementDecl : list(AnnotationTypeElementModifier) * UnannType * Id * AnnotatedDimsEmpty * list(DefaultValue) -> AnnotationTypeElementDeclaration
+    Annotation2AnnotationTypeElementModifier : Annotation -> AnnotationTypeElementModifier
+    Public2AnnotationTypeElementModifier : Public -> AnnotationTypeElementModifier
+    Abstract2AnnotationTypeElementModifier : Abstract -> AnnotationTypeElementModifier
+    DefaultVal : ElementValue -> DefaultValue

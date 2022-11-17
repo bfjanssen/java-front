@@ -1,0 +1,26 @@
+module trans/sig/java/expressions/Main-sig
+
+imports
+  trans/sig/java/expressions/PrimaryExpressions-sig
+  trans/sig/java/expressions/ClassInstanceCreation-sig
+  trans/sig/java/expressions/ArrayCreation-sig
+  trans/sig/java/expressions/FieldAccess-sig
+  trans/sig/java/expressions/ArrayAccess-sig
+  trans/sig/java/expressions/MethodInvocation-sig
+  trans/sig/java/expressions/MethodReference-sig
+  trans/sig/java/expressions/Postfix-sig
+  trans/sig/java/expressions/UnaryOperators-sig
+  trans/sig/java/expressions/BinaryOperators-sig
+  trans/sig/java/expressions/AssignmentOperators-sig
+
+signature
+
+  sorts
+    Expression
+
+  constructors
+    Expression-Plhdr : Expression
+
+signature
+
+  constructors

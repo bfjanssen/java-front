@@ -18,7 +18,7 @@ imports
 
 rules // Analysis
 
-  editor-analyze = stx-editor-analyze(pre-analyze,group-key,post-analyze|"statics", "projectOk", "groupOk", "fileOk")
+  editor-analyze = stx-editor-analyze(pre-analyze,group-key,post-analyze|"trans/statics", "projectOk", "groupOk", "fileOk")
 
   pre-analyze = explicate-injections-metaborg-java
 
@@ -29,7 +29,7 @@ rules // Analysis
   post-analyze = implicate-injections-metaborg-java
 
 rules // Editor services
-  
+
   editor-resolve = stx-editor-resolve
 
   editor-hover = stx-editor-hover

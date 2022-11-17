@@ -1,0 +1,36 @@
+module trans/sig/java/classes/ConstructorDeclarations-sig
+
+imports
+  trans/sig/java/classes/ClassDeclarations-sig
+  trans/sig/java/lexical/Identifiers-sig
+  trans/sig/java/lexical/Modifiers-sig
+  trans/sig/java/classes/MethodDeclarations-sig
+  trans/sig/java/types/ParameterizedTypes-sig
+  trans/sig/java/names/Names-sig
+  trans/sig/java/interfaces/Annotations-sig
+  trans/sig/java/expressions/Main-sig
+  trans/sig/java/statements/Blocks-sig
+
+signature
+
+  sorts
+    ConstructorDeclaration
+    ConstructorModifier
+    ConstructorInvocation
+
+  constructors
+    ConstructorDeclaration-Plhdr : ConstructorDeclaration
+    ConstructorModifier-Plhdr : ConstructorModifier
+    ConstructorInvocation-Plhdr : ConstructorInvocation
+
+signature
+
+  constructors
+    ConstrDecl : list(ConstructorModifier) * list(TypeParameters) * Id * FormalParams * list(Throws) * list(ConstructorInvocation) * list(BlockStatement) -> ConstructorDeclaration
+    Annotation2ConstructorModifier : Annotation -> ConstructorModifier
+    Public2ConstructorModifier : Public -> ConstructorModifier
+    Private2ConstructorModifier : Private -> ConstructorModifier
+    Protected2ConstructorModifier : Protected -> ConstructorModifier
+    AltConstrInv : list(TypeArguments) * list(Expression) -> ConstructorInvocation
+    SuperConstrInv : list(TypeArguments) * list(Expression) -> ConstructorInvocation
+    ExprNameConstrInv : Expression * list(TypeArguments) * list(Expression) -> ConstructorInvocation

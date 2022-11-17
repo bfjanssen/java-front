@@ -1,0 +1,19 @@
+module trans/sig/java/types/Main-sig
+
+imports
+  trans/sig/java/types/PrimitiveTypes-sig
+  trans/sig/java/types/ReferenceTypes-sig
+
+signature
+
+  sorts
+    Type
+
+  constructors
+    Type-Plhdr : Type
+
+signature
+
+  constructors
+    PrimitiveType2Type : PrimitiveType -> Type
+    ReferenceType2Type : ReferenceType -> Type

@@ -1,0 +1,20 @@
+module trans/sig/java/types/TypeVariable-sig
+
+imports
+  trans/sig/java/types/ReferenceTypes-sig
+  trans/sig/java/lexical/Identifiers-sig
+  trans/sig/java/interfaces/Annotations-sig
+
+signature
+
+  sorts
+    TypeParameter
+
+  constructors
+    TypeParameter-Plhdr : TypeParameter
+
+signature
+
+  constructors
+    TypeParameter : list(Annotation) * Id -> TypeParameter
+    TypeParameterExtends : list(Annotation) * Id * list(ClassType) -> TypeParameter

@@ -1,0 +1,10 @@
+module trans/java/arrays/Main
+
+imports
+
+  trans/sig/java/arrays/Main-sig
+
+  trans/java/arrays/ArrayInitializers
+
+rules // Chapter 10. Arrays
+

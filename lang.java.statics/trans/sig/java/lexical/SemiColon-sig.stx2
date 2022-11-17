@@ -1,0 +1,16 @@
+module trans/sig/java/lexical/SemiColon-sig
+
+imports
+
+signature
+
+  sorts
+    SemiColon
+
+  constructors
+    SemiColon-Plhdr : SemiColon
+
+signature
+
+  constructors
+    SemiColon : SemiColon

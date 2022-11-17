@@ -1,0 +1,17 @@
+module trans/sig/java/literals/CharacterLiterals-sig
+
+imports
+
+signature
+
+  sorts
+    CharacterLiteral
+    CharLiteral = string
+
+  constructors
+    CharacterLiteral-Plhdr : CharacterLiteral
+
+signature
+
+  constructors
+    CharLiteral : CharLiteral -> CharacterLiteral

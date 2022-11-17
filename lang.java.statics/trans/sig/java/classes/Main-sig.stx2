@@ -1,0 +1,20 @@
+module trans/sig/java/classes/Main-sig
+
+imports
+  trans/sig/java/classes/ClassDeclarations-sig
+  trans/sig/java/classes/FieldDeclarations-sig
+  trans/sig/java/classes/MethodDeclarations-sig
+  trans/sig/java/classes/EnumDeclarations-sig
+  trans/sig/java/classes/InstanceInitializers-sig
+  trans/sig/java/classes/StaticInitializers-sig
+  trans/sig/java/classes/ConstructorDeclarations-sig
+
+signature
+
+  sorts
+
+  constructors
+
+signature
+
+  constructors

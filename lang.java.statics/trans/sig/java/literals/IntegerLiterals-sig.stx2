@@ -1,0 +1,23 @@
+module trans/sig/java/literals/IntegerLiterals-sig
+
+imports
+
+signature
+
+  sorts
+    IntLiteral
+    DeciLiteral = string
+    HexaLiteral = string
+    OctaLiteral = string
+    BinLiteral = string
+
+  constructors
+    IntLiteral-Plhdr : IntLiteral
+
+signature
+
+  constructors
+    Deci : DeciLiteral -> IntLiteral
+    Hexa : HexaLiteral -> IntLiteral
+    Octa : OctaLiteral -> IntLiteral
+    Bin : BinLiteral -> IntLiteral

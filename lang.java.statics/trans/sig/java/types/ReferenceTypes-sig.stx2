@@ -1,0 +1,41 @@
+module trans/sig/java/types/ReferenceTypes-sig
+
+imports
+  trans/sig/java/lexical/Identifiers-sig
+  trans/sig/java/types/PrimitiveTypes-sig
+  trans/sig/java/types/ParameterizedTypes-sig
+  trans/sig/java/interfaces/Annotations-sig
+
+signature
+
+  sorts
+    ReferenceType
+    ClassType
+    TypeVariable
+    ArrayType
+    AnnotatedDims
+    AnnotatedDimsEmpty
+    AnnotatedDim
+
+  constructors
+    ReferenceType-Plhdr : ReferenceType
+    ClassType-Plhdr : ClassType
+    TypeVariable-Plhdr : TypeVariable
+    ArrayType-Plhdr : ArrayType
+    AnnotatedDims-Plhdr : AnnotatedDims
+    AnnotatedDimsEmpty-Plhdr : AnnotatedDimsEmpty
+    AnnotatedDim-Plhdr : AnnotatedDim
+
+signature
+
+  constructors
+    ClassType2ReferenceType : ClassType -> ReferenceType
+    ArrayType2ReferenceType : ArrayType -> ReferenceType
+    ClassType : list(Annotation) * Id * list(TypeArguments) -> ClassType
+    ClassOrInterfaceTypeMember : ClassType * list(Annotation) * Id * list(TypeArguments) -> ClassType
+    TypeVar : list(Annotation) * Id -> TypeVariable
+    ArrayTypePrimitive : PrimitiveType * AnnotatedDims -> ArrayType
+    ArrayTypeClassType : ClassType * AnnotatedDims -> ArrayType
+    AnnotatedDims2AnnotatedDims : list(AnnotatedDim) -> AnnotatedDims
+    AnnotatedDims2AnnotatedDimsEmpty : list(AnnotatedDim) -> AnnotatedDimsEmpty
+    AnnotateDim : list(Annotation) -> AnnotatedDim

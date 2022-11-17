@@ -1,0 +1,16 @@
+module trans/sig/java/literals/NullLiteral-sig
+
+imports
+
+signature
+
+  sorts
+    NullLiteral
+
+  constructors
+    NullLiteral-Plhdr : NullLiteral
+
+signature
+
+  constructors
+    Null : NullLiteral

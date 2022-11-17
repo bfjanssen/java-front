@@ -1,0 +1,33 @@
+module trans/sig/java/interfaces/Annotations-sig
+
+imports
+  trans/sig/java/names/Names-sig
+  trans/sig/java/lexical/Identifiers-sig
+  trans/sig/java/expressions/Main-sig
+
+signature
+
+  sorts
+    Annotation
+    ElementValuePair
+    ElementValue
+    ElementValueArrayInitializer
+
+  constructors
+    Annotation-Plhdr : Annotation
+    ElementValuePair-Plhdr : ElementValuePair
+    ElementValue-Plhdr : ElementValue
+    ElementValueArrayInitializer-Plhdr : ElementValueArrayInitializer
+
+signature
+
+  constructors
+    Anno : TypeName * list(ElementValuePair) -> Annotation
+    MarkerAnno : TypeName -> Annotation
+    SingleElemAnno : TypeName * ElementValue -> Annotation
+    ElemValPair : Id * ElementValue -> ElementValuePair
+    Expression2ElementValue : Expression -> ElementValue
+    ElementValueArrayInitializer2ElementValue : ElementValueArrayInitializer -> ElementValue
+    Annotation2ElementValue : Annotation -> ElementValue
+    ElementValArrayInit : list(ElementValue) -> ElementValueArrayInitializer
+    ElementValArrayInitComma : list(ElementValue) -> ElementValueArrayInitializer

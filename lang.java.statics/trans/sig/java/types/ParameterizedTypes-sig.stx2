@@ -1,0 +1,27 @@
+module trans/sig/java/types/ParameterizedTypes-sig
+
+imports
+  trans/sig/java/types/ReferenceTypes-sig
+  trans/sig/java/interfaces/Annotations-sig
+
+signature
+
+  sorts
+    TypeArguments
+    TypeArgument
+    WildCard
+
+  constructors
+    TypeArguments-Plhdr : TypeArguments
+    TypeArgument-Plhdr : TypeArgument
+    WildCard-Plhdr : WildCard
+
+signature
+
+  constructors
+    TypeArguments : list(TypeArgument) -> TypeArguments
+    ReferenceType2TypeArgument : ReferenceType -> TypeArgument
+    WildCard2TypeArgument : WildCard -> TypeArgument
+    WildCard : list(Annotation) -> WildCard
+    WildCardExtends : list(Annotation) * ReferenceType -> WildCard
+    WildCardSuper : list(Annotation) * ReferenceType -> WildCard

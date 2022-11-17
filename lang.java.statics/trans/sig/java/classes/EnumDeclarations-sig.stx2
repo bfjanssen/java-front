@@ -1,0 +1,31 @@
+module trans/sig/java/classes/EnumDeclarations-sig
+
+imports
+  trans/sig/java/lexical/Identifiers-sig
+  trans/sig/java/classes/ClassDeclarations-sig
+  trans/sig/java/interfaces/Annotations-sig
+  trans/sig/java/expressions/Main-sig
+
+signature
+
+  sorts
+    EnumDeclaration
+    EnumConstant
+    EnumConstantArgs
+    EnumBodyDeclarations
+
+  constructors
+    EnumDeclaration-Plhdr : EnumDeclaration
+    EnumConstant-Plhdr : EnumConstant
+    EnumConstantArgs-Plhdr : EnumConstantArgs
+    EnumBodyDeclarations-Plhdr : EnumBodyDeclarations
+
+signature
+
+  constructors
+    EnumDeclComma : list(ClassModifier) * Id * list(SuperInterfaces) * list(EnumConstant) * list(EnumBodyDeclarations) -> EnumDeclaration
+    EnumDecl : list(ClassModifier) * Id * list(SuperInterfaces) * list(EnumConstant) * list(EnumBodyDeclarations) -> EnumDeclaration
+    EnumConst : list(Annotation) * Id * list(EnumConstantArgs) * list(ClassBodyDeclaration) -> EnumConstant
+    EnumConstNoBody : list(Annotation) * Id * list(EnumConstantArgs) -> EnumConstant
+    EnumConstArgs : list(Expression) -> EnumConstantArgs
+    EnumBodyDecs : list(ClassBodyDeclaration) -> EnumBodyDeclarations

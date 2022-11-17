@@ -1,0 +1,19 @@
+module signatures/metaborg-java-sig
+
+imports
+  signatures/java/Main-sig
+  signatures/java/Test-sig
+  signatures/java/packages/CompilationUnits-sig
+
+signature
+
+  sorts
+    Start
+
+  constructors
+    Start-Plhdr : Start
+
+signature
+
+  constructors
+    CompilationUnit2Start : CompilationUnit -> Start

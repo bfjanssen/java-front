@@ -1,0 +1,19 @@
+module trans/sig/java/expressions/ArrayAccess-sig
+
+imports
+  trans/sig/java/names/Names-sig
+  trans/sig/java/expressions/ArrayCreation-sig
+
+signature
+
+  sorts
+    ArrayAccess
+
+  constructors
+    ArrayAccess-Plhdr : ArrayAccess
+
+signature
+
+  constructors
+    ArrayAccess2Expression : ArrayAccess -> Expression
+    ArrayAccess : Expression * Expression -> ArrayAccess

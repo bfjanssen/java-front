@@ -1,0 +1,16 @@
+module trans/sig/java/packages/Main-sig
+
+imports
+  trans/sig/java/packages/CompilationUnits-sig
+  trans/sig/java/packages/ImportDeclarations-sig
+  trans/sig/java/packages/PackageDeclarations-sig
+
+signature
+
+  sorts
+
+  constructors
+
+signature
+
+  constructors

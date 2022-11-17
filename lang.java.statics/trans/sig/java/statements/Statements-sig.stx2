@@ -1,0 +1,81 @@
+module trans/sig/java/statements/Statements-sig
+
+imports
+  trans/sig/java/classes/FieldDeclarations-sig
+  trans/sig/java/classes/MethodDeclarations-sig
+  trans/sig/java/lexical/Identifiers-sig
+  trans/sig/java/statements/Blocks-sig
+  trans/sig/java/names/Names-sig
+  trans/sig/java/types/ReferenceTypes-sig
+  trans/sig/java/expressions/Main-sig
+
+signature
+
+  sorts
+    Statement
+    ForInit
+    ForUpdate
+    Exprs
+    SwitchGroup
+    SwitchLabel
+    CatchClause
+    CatchFormalParameter
+    CatchType
+    CatchTypeRest
+    Resource
+
+  constructors
+    Statement-Plhdr : Statement
+    ForInit-Plhdr : ForInit
+    ForUpdate-Plhdr : ForUpdate
+    Exprs-Plhdr : Exprs
+    SwitchGroup-Plhdr : SwitchGroup
+    SwitchLabel-Plhdr : SwitchLabel
+    CatchClause-Plhdr : CatchClause
+    CatchFormalParameter-Plhdr : CatchFormalParameter
+    CatchType-Plhdr : CatchType
+    CatchTypeRest-Plhdr : CatchTypeRest
+    Resource-Plhdr : Resource
+
+signature
+
+  constructors
+    Labeled : Id * Statement -> Statement
+    If : Expression * Statement -> Statement
+    IfElse : Expression * Statement * Statement -> Statement
+    While : Expression * Statement -> Statement
+    For : ForInit * list(Expression) * ForUpdate * Statement -> Statement
+    ForEach : list(VariableModifier) * UnannType * VarDeclId * Expression * Statement -> Statement
+    Exprs2ForInit : Exprs -> ForInit
+    VarDecls : list(VariableModifier) * UnannType * list(VarDecl) -> ForInit
+    Exprs2ForUpdate : Exprs -> ForUpdate
+    ExprList : list(Expression) -> Exprs
+    Block2Statement : Block -> Statement
+    Empty : Statement
+    ExpressionStatement : Expression -> Statement
+    Assert : Expression -> Statement
+    Assert : Expression * Expression -> Statement
+    Switch : Expression * list(SwitchGroup) * list(SwitchLabel) -> Statement
+    SwitchGroup : list(SwitchLabel) * list(BlockStatement) -> SwitchGroup
+    CaseExpr : Expression -> SwitchLabel
+    DefaultCase : SwitchLabel
+    DoWhile : Statement * Expression -> Statement
+    Break : Statement
+    Break : Id -> Statement
+    Continue : Statement
+    Continue : Id -> Statement
+    Return : Statement
+    Return : Expression -> Statement
+    Synchronized : Expression * Block -> Statement
+    Throw : Expression -> Statement
+    Try : Block * list(CatchClause) -> Statement
+    TryFinally : Block * list(CatchClause) * Block -> Statement
+    Catch : CatchFormalParameter * Block -> CatchClause
+    CatchParam : list(VariableModifier) * CatchType * VarDeclId -> CatchFormalParameter
+    CatchType : UnannClassType * list(CatchTypeRest) -> CatchType
+    CatchTypeElem : ClassType -> CatchTypeRest
+    TryWithResources : list(Resource) * Block * list(CatchClause) -> Statement
+    TryWithResourcesSemiColon : list(Resource) * Block * list(CatchClause) -> Statement
+    TryWithResources : list(Resource) * Block * list(CatchClause) * Block -> Statement
+    TryWithResourcesSemiColon : list(Resource) * Block * list(CatchClause) * Block -> Statement
+    Resource : list(VariableModifier) * UnannType * VarDeclId * Expression -> Resource

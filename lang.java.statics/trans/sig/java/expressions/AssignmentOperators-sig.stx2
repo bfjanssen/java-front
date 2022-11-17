@@ -1,0 +1,33 @@
+module trans/sig/java/expressions/AssignmentOperators-sig
+
+imports
+  trans/sig/java/expressions/ArrayAccess-sig
+  trans/sig/java/expressions/FieldAccess-sig
+  trans/sig/java/names/Names-sig
+
+signature
+
+  sorts
+    LHS
+
+  constructors
+    LHS-Plhdr : LHS
+
+signature
+
+  constructors
+    Assign : LHS * Expression -> Expression
+    AssignMul : LHS * Expression -> Expression
+    AssignDiv : LHS * Expression -> Expression
+    AssignMod : LHS * Expression -> Expression
+    AssignAdd : LHS * Expression -> Expression
+    AssignSub : LHS * Expression -> Expression
+    AssignLeftShift : LHS * Expression -> Expression
+    AssignRightShift : LHS * Expression -> Expression
+    AssignURightShift : LHS * Expression -> Expression
+    AssignAnd : LHS * Expression -> Expression
+    AssignXor : LHS * Expression -> Expression
+    AssignOr : LHS * Expression -> Expression
+    ExpressionName2LHS : ExpressionName -> LHS
+    FieldAccess2LHS : FieldAccess -> LHS
+    ArrayAccess2LHS : ArrayAccess -> LHS

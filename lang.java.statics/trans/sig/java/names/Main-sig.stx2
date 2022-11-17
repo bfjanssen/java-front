@@ -1,0 +1,14 @@
+module trans/sig/java/names/Main-sig
+
+imports
+  trans/sig/java/names/Names-sig
+
+signature
+
+  sorts
+
+  constructors
+
+signature
+
+  constructors

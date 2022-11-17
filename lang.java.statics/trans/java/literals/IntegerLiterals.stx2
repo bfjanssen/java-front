@@ -1,0 +1,23 @@
+module trans/java/literals/IntegerLiterals
+
+imports
+
+  trans/sig/java/literals/IntegerLiterals-sig
+
+  trans/java/literals/Main
+  trans/java/types/Main
+  trans/java/types/PrimitiveTypes
+
+
+rules// 3.10.1. Integer Literals
+
+  intLitOk : IntLiteral -> TYPE
+
+  intLitOk(Deci(_)) = INT().
+
+  intLitOk(Hexa(_)) = INT().
+
+  intLitOk(Octa(_)) = INT().
+
+  intLitOk(Bin(_)) = INT().
+

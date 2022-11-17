@@ -1,0 +1,15 @@
+module trans/java/literals/NullLiteral
+
+imports
+
+  trans/sig/java/literals/NullLiteral-sig
+
+  trans/java/literals/Main
+  trans/java/types/Main
+
+
+rules // 3.10.7. The Null Literal
+
+  nullLitOk : NullLiteral -> TYPE
+
+  nullLitOk(Null()) = NULL().

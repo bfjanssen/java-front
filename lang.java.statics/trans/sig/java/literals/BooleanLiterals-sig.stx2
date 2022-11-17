@@ -1,0 +1,17 @@
+module trans/sig/java/literals/BooleanLiterals-sig
+
+imports
+
+signature
+
+  sorts
+    BoolLiteral
+
+  constructors
+    BoolLiteral-Plhdr : BoolLiteral
+
+signature
+
+  constructors
+    True : BoolLiteral
+    False : BoolLiteral

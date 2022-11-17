@@ -1,0 +1,26 @@
+module trans/java/expressions/Postfix
+
+imports
+
+  trans/sig/java/expressions/Postfix-sig
+
+  trans/java/expressions/Main
+  trans/java/names/ExpressionNames
+  trans/java/types/Conversions
+  trans/java/types/PrimitiveTypes
+
+
+rules // 15.14. Postfix Expressions
+
+  exprOk(s, PostIncr(expr)) = T :-
+  {T'}
+    T' == exprOk(s, expr),
+    T == promoteNumericUnary(T').
+
+  exprOk(s, PostDecr(expr)) = T :-
+  {T'}
+    T' == exprOk(s, expr),
+    T == promoteNumericUnary(T').
+
+  exprOk(s, ExpressionName2Expression(exprName)) = varDeclType(exprNameOk(s, exprName)).
+

@@ -1,0 +1,29 @@
+module trans/sig/java/expressions/ArrayCreation-sig
+
+imports
+  trans/sig/java/types/ReferenceTypes-sig
+  trans/sig/java/types/PrimitiveTypes-sig
+  trans/sig/java/interfaces/Annotations-sig
+  trans/sig/java/arrays/ArrayInitializers-sig
+
+signature
+
+  sorts
+    ArrayCreationExpression
+    ArrayBaseType
+    DimExpr
+
+  constructors
+    ArrayCreationExpression-Plhdr : ArrayCreationExpression
+    ArrayBaseType-Plhdr : ArrayBaseType
+    DimExpr-Plhdr : DimExpr
+
+signature
+
+  constructors
+    ArrayCreationExpression2Expression : ArrayCreationExpression -> Expression
+    NewArray : ArrayBaseType * list(DimExpr) * AnnotatedDimsEmpty -> ArrayCreationExpression
+    NewArrayInit : ArrayBaseType * AnnotatedDims * ArrayInitializer -> ArrayCreationExpression
+    ClassType2ArrayBaseType : ClassType -> ArrayBaseType
+    PrimitiveType2ArrayBaseType : PrimitiveType -> ArrayBaseType
+    Dim : list(Annotation) * Expression -> DimExpr

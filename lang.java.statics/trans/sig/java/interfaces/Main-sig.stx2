@@ -1,0 +1,18 @@
+module trans/sig/java/interfaces/Main-sig
+
+imports
+  trans/sig/java/interfaces/InterfaceDeclarations-sig
+  trans/sig/java/interfaces/InterfaceMethodDeclarations-sig
+  trans/sig/java/interfaces/AnnotationTypes-sig
+  trans/sig/java/interfaces/Annotations-sig
+  trans/sig/java/interfaces/ConstantDeclarations-sig
+
+signature
+
+  sorts
+
+  constructors
+
+signature
+
+  constructors

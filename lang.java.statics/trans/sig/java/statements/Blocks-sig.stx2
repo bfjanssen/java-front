@@ -1,0 +1,24 @@
+module trans/sig/java/statements/Blocks-sig
+
+imports
+  trans/sig/java/classes/ClassDeclarations-sig
+  trans/sig/java/statements/LocalVariableDeclarations-sig
+  trans/sig/java/statements/Statements-sig
+
+signature
+
+  sorts
+    Block
+    BlockStatement
+
+  constructors
+    Block-Plhdr : Block
+    BlockStatement-Plhdr : BlockStatement
+
+signature
+
+  constructors
+    Block : list(BlockStatement) -> Block
+    LocalVariableDeclarationStatement2BlockStatement : LocalVariableDeclarationStatement -> BlockStatement
+    ClassDeclaration2BlockStatement : ClassDeclaration -> BlockStatement
+    Statement2BlockStatement : Statement -> BlockStatement

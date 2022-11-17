@@ -1,0 +1,17 @@
+module trans/sig/java/classes/InstanceInitializers-sig
+
+imports
+  trans/sig/java/statements/Blocks-sig
+
+signature
+
+  sorts
+    InstanceInitializer
+
+  constructors
+    InstanceInitializer-Plhdr : InstanceInitializer
+
+signature
+
+  constructors
+    InstanceInit : Block -> InstanceInitializer

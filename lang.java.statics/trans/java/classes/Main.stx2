@@ -1,0 +1,16 @@
+module trans/java/classes/Main
+
+imports
+
+  trans/sig/java/classes/Main-sig
+
+  trans/java/classes/ClassDeclarations
+  trans/java/classes/ConstructorDeclarations
+  trans/java/classes/EnumDeclarations
+  trans/java/classes/FieldDeclarations
+  trans/java/classes/InstanceInitializers
+  trans/java/classes/MethodDeclarations
+  trans/java/classes/StaticInitializers
+
+
+rules // Chapter 8. Classes

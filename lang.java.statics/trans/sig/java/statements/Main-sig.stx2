@@ -1,0 +1,16 @@
+module trans/sig/java/statements/Main-sig
+
+imports
+  trans/sig/java/statements/Blocks-sig
+  trans/sig/java/statements/LocalVariableDeclarations-sig
+  trans/sig/java/statements/Statements-sig
+
+signature
+
+  sorts
+
+  constructors
+
+signature
+
+  constructors

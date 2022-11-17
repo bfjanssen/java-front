@@ -1,0 +1,25 @@
+module trans/sig/java/Test-sig
+
+imports
+  trans/sig/java/Main-sig
+  trans/sig/java/lexical/Comments-sig
+  trans/sig/java/lexical/Identifiers-sig
+  trans/sig/java/lexical/LineTerminators-sig
+  trans/sig/java/packages/CompilationUnits-sig
+
+signature
+
+  sorts
+    Expectation
+    TestUnit
+
+  constructors
+    Expectation-Plhdr : Expectation
+    TestUnit-Plhdr : TestUnit
+
+signature
+
+  constructors
+    Test : list(TestUnit) -> CompilationUnit
+    TestPkg : ID * list(TestUnit) -> TestUnit
+    TestFile : ID * CompilationUnit -> TestUnit

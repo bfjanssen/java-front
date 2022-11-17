@@ -1,0 +1,37 @@
+module trans/sig/java/names/Names-sig
+
+imports
+  trans/sig/java/lexical/Identifiers-sig
+
+signature
+
+  sorts
+    PackageName
+    TypeName
+    PackageOrTypeName
+    ExpressionName
+    AmbiguousName
+    MethodName
+
+  constructors
+    PackageName-Plhdr : PackageName
+    TypeName-Plhdr : TypeName
+    PackageOrTypeName-Plhdr : PackageOrTypeName
+    ExpressionName-Plhdr : ExpressionName
+    AmbiguousName-Plhdr : AmbiguousName
+    MethodName-Plhdr : MethodName
+
+signature
+
+  constructors
+    PackageName : Id -> PackageName
+    PackageName : PackageName * Id -> PackageName
+    TypeName : Id -> TypeName
+    TypeName : PackageOrTypeName * Id -> TypeName
+    PackageOrTypeName : Id -> PackageOrTypeName
+    PackageOrTypeName : PackageOrTypeName * Id -> PackageOrTypeName
+    ExpressionName : Id -> ExpressionName
+    ExpressionName : AmbiguousName * Id -> ExpressionName
+    AmbiguousName : Id -> AmbiguousName
+    AmbiguousName : AmbiguousName * Id -> AmbiguousName
+    MethodName : Id -> MethodName

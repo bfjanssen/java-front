@@ -1,0 +1,27 @@
+module trans/sig/java/literals/Main-sig
+
+imports
+  trans/sig/java/literals/IntegerLiterals-sig
+  trans/sig/java/literals/FloatingPointLiterals-sig
+  trans/sig/java/literals/BooleanLiterals-sig
+  trans/sig/java/literals/CharacterLiterals-sig
+  trans/sig/java/literals/StringLiterals-sig
+  trans/sig/java/literals/NullLiteral-sig
+
+signature
+
+  sorts
+    Literal
+
+  constructors
+    Literal-Plhdr : Literal
+
+signature
+
+  constructors
+    IntLiteral2Literal : IntLiteral -> Literal
+    FloatLiteral2Literal : FloatLiteral -> Literal
+    BoolLiteral2Literal : BoolLiteral -> Literal
+    CharacterLiteral2Literal : CharacterLiteral -> Literal
+    StringLiteral2Literal : StringLiteral -> Literal
+    NullLiteral2Literal : NullLiteral -> Literal

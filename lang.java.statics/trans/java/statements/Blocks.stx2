@@ -1,0 +1,48 @@
+module trans/java/statements/Blocks
+
+imports
+
+  trans/sig/java/statements/Blocks-sig
+
+  trans/java/classes/ClassDeclarations
+  trans/java/names/Main
+  trans/java/statements/LocalVariableDeclarations
+  trans/java/statements/Main
+  trans/java/statements/Statements
+
+
+rules // 14.2. Blocks
+
+  blkOk : scope * Block
+
+  blkOk(s, Block(blkStmtList)) :-
+  {s_blk}
+    new s_blk, s_blk -LEX-> s,
+    blkStmtListOk(s_blk, blkStmtList).
+
+
+  blkStmtListOk : scope * list(BlockStatement)
+
+  blkStmtListOk(s, []).
+
+  blkStmtListOk(s, [blkStmt|blkStmtList]) :-
+  {s'}
+    s' == blkStmtOk(s, blkStmt),
+    blkStmtListOk(s', blkStmtList),
+    true.
+
+
+  blkStmtOk : scope * BlockStatement -> scope
+
+  blkStmtOk(s, LocalVariableDeclarationStatement2BlockStatement(localVarDeclStmt)) = s' :-
+    new s', s' -LEX-> s,
+    localVarDeclStmtOk(s', localVarDeclStmt).
+
+  blkStmtOk(s, ClassDeclaration2BlockStatement(clsDecl)) = s' :-
+    new s', s' -LEX-> s,
+    // FIXME clsDecl cannot be public, protected, private, or static
+    clsDeclOk(s', clsDecl, s', s').
+
+  blkStmtOk(s, Statement2BlockStatement(stmt)) = s :-
+    stmtOk(s, stmt).
+

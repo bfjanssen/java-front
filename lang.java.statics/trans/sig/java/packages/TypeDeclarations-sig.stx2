@@ -1,0 +1,21 @@
+module trans/sig/java/packages/TypeDeclarations-sig
+
+imports
+  trans/sig/java/lexical/SemiColon-sig
+  trans/sig/java/classes/ClassDeclarations-sig
+  trans/sig/java/interfaces/InterfaceDeclarations-sig
+
+signature
+
+  sorts
+    TypeDeclaration
+
+  constructors
+    TypeDeclaration-Plhdr : TypeDeclaration
+
+signature
+
+  constructors
+    ClassDeclaration2TypeDeclaration : ClassDeclaration -> TypeDeclaration
+    InterfaceDeclaration2TypeDeclaration : InterfaceDeclaration -> TypeDeclaration
+    SemiColon2TypeDeclaration : SemiColon -> TypeDeclaration

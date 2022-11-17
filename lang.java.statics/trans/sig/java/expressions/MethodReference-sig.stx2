@@ -1,0 +1,24 @@
+module trans/sig/java/expressions/MethodReference-sig
+
+imports
+  trans/sig/java/types/ReferenceTypes-sig
+  trans/sig/java/types/ParameterizedTypes-sig
+  trans/sig/java/lexical/Identifiers-sig
+  trans/sig/java/names/Names-sig
+  trans/sig/java/expressions/UnaryOperators-sig
+
+signature
+
+  sorts
+
+  constructors
+
+signature
+
+  constructors
+    MethodReferenceRType : ReferenceType * list(TypeArguments) * Id -> Expression
+    MethodReferenceExpr : Expression * list(TypeArguments) * Id -> Expression
+    MethodReferenceSuper : list(TypeArguments) * Id -> Expression
+    MethodReferenceQSuper : TypeName * list(TypeArguments) * Id -> Expression
+    MethodReferenceCType : ClassType * list(TypeArguments) -> Expression
+    MethodReferenceAType : ArrayType * list(TypeArguments) -> Expression

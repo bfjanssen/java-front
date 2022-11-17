@@ -1,0 +1,31 @@
+module trans/sig/java/expressions/ClassInstanceCreation-sig
+
+imports
+  trans/sig/java/names/Names-sig
+  trans/sig/java/lexical/Identifiers-sig
+  trans/sig/java/interfaces/Annotations-sig
+  trans/sig/java/types/ParameterizedTypes-sig
+  trans/sig/java/classes/ClassDeclarations-sig
+
+signature
+
+  sorts
+    UnqualifiedInstance
+    QualifiedId
+    TypeArgumentsOrDiamond
+
+  constructors
+    UnqualifiedInstance-Plhdr : UnqualifiedInstance
+    QualifiedId-Plhdr : QualifiedId
+    TypeArgumentsOrDiamond-Plhdr : TypeArgumentsOrDiamond
+
+signature
+
+  constructors
+    UnqualifiedInstance2Expression : UnqualifiedInstance -> Expression
+    QualifiedInstance : Expression * UnqualifiedInstance -> Expression
+    NewInstance : list(TypeArguments) * list(Annotation) * Id * list(QualifiedId) * list(TypeArgumentsOrDiamond) * list(Expression) -> UnqualifiedInstance
+    NewInstance : list(TypeArguments) * list(Annotation) * Id * list(QualifiedId) * list(TypeArgumentsOrDiamond) * list(Expression) * list(ClassBodyDeclaration) -> UnqualifiedInstance
+    QualifiedId : list(Annotation) * Id -> QualifiedId
+    TypeArguments2TypeArgumentsOrDiamond : TypeArguments -> TypeArgumentsOrDiamond
+    Diamond : TypeArgumentsOrDiamond

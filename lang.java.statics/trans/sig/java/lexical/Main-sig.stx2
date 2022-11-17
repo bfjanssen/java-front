@@ -1,0 +1,15 @@
+module trans/sig/java/lexical/Main-sig
+
+imports
+  trans/sig/java/lexical/Identifiers-sig
+  trans/sig/java/lexical/Modifiers-sig
+
+signature
+
+  sorts
+
+  constructors
+
+signature
+
+  constructors

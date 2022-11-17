@@ -1,0 +1,18 @@
+module trans/sig/java/expressions/Postfix-sig
+
+imports
+  trans/sig/java/names/Names-sig
+  trans/sig/java/expressions/Main-sig
+
+signature
+
+  sorts
+
+  constructors
+
+signature
+
+  constructors
+    PostIncr : Expression -> Expression
+    PostDecr : Expression -> Expression
+    ExpressionName2Expression : ExpressionName -> Expression

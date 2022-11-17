@@ -1,0 +1,20 @@
+module trans/sig/java/expressions/MethodInvocation-sig
+
+imports
+  trans/sig/java/names/Names-sig
+  trans/sig/java/lexical/Identifiers-sig
+  trans/sig/java/types/ParameterizedTypes-sig
+
+signature
+
+  sorts
+
+  constructors
+
+signature
+
+  constructors
+    Invoke : MethodName * list(Expression) -> Expression
+    InvokeQExp : Expression * list(TypeArguments) * Id * list(Expression) -> Expression
+    InvokeSuper : list(TypeArguments) * Id * list(Expression) -> Expression
+    InvokeQSuper : TypeName * list(TypeArguments) * Id * list(Expression) -> Expression

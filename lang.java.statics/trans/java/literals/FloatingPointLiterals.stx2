@@ -1,0 +1,24 @@
+module trans/java/literals/FloatingPointLiterals
+
+imports
+
+  trans/sig/java/literals/FloatingPointLiterals-sig
+
+  trans/java/literals/Main
+  trans/java/types/Main
+  trans/java/types/PrimitiveTypes
+
+
+rules // 3.10.2. Floating-Point Literals
+
+  floatLitOk : FloatLiteral -> TYPE
+
+  floatLitOk(DeciFloat(_)) = FLOAT().
+
+  floatLitOk(HexaFloat(_)) = FLOAT().
+
+  floatLitOk(DeciDouble(_)) = FLOAT().
+
+  floatLitOk(HexaDouble(_)) = FLOAT().
+
+

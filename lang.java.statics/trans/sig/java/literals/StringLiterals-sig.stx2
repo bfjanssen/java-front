@@ -1,0 +1,17 @@
+module trans/sig/java/literals/StringLiterals-sig
+
+imports
+
+signature
+
+  sorts
+    StringLiteral
+    StringLit = string
+
+  constructors
+    StringLiteral-Plhdr : StringLiteral
+
+signature
+
+  constructors
+    StringLiteral : StringLit -> StringLiteral

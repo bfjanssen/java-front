@@ -1,0 +1,22 @@
+module trans/sig/java/statements/LocalVariableDeclarations-sig
+
+imports
+  trans/sig/java/classes/FieldDeclarations-sig
+  trans/sig/java/classes/MethodDeclarations-sig
+  trans/sig/java/interfaces/Annotations-sig
+
+signature
+
+  sorts
+    LocalVariableDeclarationStatement
+    LocalVariableDeclaration
+
+  constructors
+    LocalVariableDeclarationStatement-Plhdr : LocalVariableDeclarationStatement
+    LocalVariableDeclaration-Plhdr : LocalVariableDeclaration
+
+signature
+
+  constructors
+    LocVarDeclStm : LocalVariableDeclaration -> LocalVariableDeclarationStatement
+    LocalVarDecl : list(VariableModifier) * UnannType * list(VarDecl) -> LocalVariableDeclaration

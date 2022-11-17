@@ -1,0 +1,17 @@
+module trans/sig/java/classes/StaticInitializers-sig
+
+imports
+  trans/sig/java/statements/Blocks-sig
+
+signature
+
+  sorts
+    StaticInitializer
+
+  constructors
+    StaticInitializer-Plhdr : StaticInitializer
+
+signature
+
+  constructors
+    StaticInit : Block -> StaticInitializer

@@ -1,0 +1,35 @@
+module trans/sig/java/expressions/BinaryOperators-sig
+
+imports
+  trans/sig/java/types/ReferenceTypes-sig
+
+signature
+
+  sorts
+
+  constructors
+
+signature
+
+  constructors
+    Mul : Expression * Expression -> Expression
+    Div : Expression * Expression -> Expression
+    Mod : Expression * Expression -> Expression
+    Add : Expression * Expression -> Expression
+    Sub : Expression * Expression -> Expression
+    LeftShift : Expression * Expression -> Expression
+    RightShift : Expression * Expression -> Expression
+    URightShift : Expression * Expression -> Expression
+    Lt : Expression * Expression -> Expression
+    Gt : Expression * Expression -> Expression
+    LtEq : Expression * Expression -> Expression
+    GtEq : Expression * Expression -> Expression
+    InstanceOf : Expression * ReferenceType -> Expression
+    Eq : Expression * Expression -> Expression
+    NotEq : Expression * Expression -> Expression
+    And : Expression * Expression -> Expression
+    Xor : Expression * Expression -> Expression
+    Or : Expression * Expression -> Expression
+    LazyAnd : Expression * Expression -> Expression
+    LazyOr : Expression * Expression -> Expression
+    Cond : Expression * Expression * Expression -> Expression

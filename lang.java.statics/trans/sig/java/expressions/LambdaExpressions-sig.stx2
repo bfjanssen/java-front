@@ -1,0 +1,23 @@
+module trans/sig/java/expressions/LambdaExpressions-sig
+
+imports
+  trans/sig/java/statements/Blocks-sig
+  trans/sig/java/lexical/Identifiers-sig
+  trans/sig/java/classes/MethodDeclarations-sig
+
+signature
+
+  sorts
+    LambdaParameters
+
+  constructors
+    LambdaParameters-Plhdr : LambdaParameters
+
+signature
+
+  constructors
+    LambdaExpression : LambdaParameters * Expression -> Expression
+    LambdaExpressionWithBlock : LambdaParameters * Block -> Expression
+    SingleInferredParam : Id -> LambdaParameters
+    Params : FormalParams -> LambdaParameters
+    InferredParams : list(Id) -> LambdaParameters

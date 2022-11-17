@@ -1,0 +1,13 @@
+module trans/java/packages/Main
+
+imports
+
+  trans/sig/java/packages/Main-sig
+
+  trans/java/packages/CompilationUnits
+  trans/java/packages/ImportDeclarations
+  trans/java/packages/PackageDeclarations
+  trans/java/packages/TypeDeclarations
+
+
+rules // Chapter 7. Packages

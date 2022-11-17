@@ -1,0 +1,14 @@
+module trans/sig/java/arrays/Main-sig
+
+imports
+  trans/sig/java/arrays/ArrayInitializers-sig
+
+signature
+
+  sorts
+
+  constructors
+
+signature
+
+  constructors

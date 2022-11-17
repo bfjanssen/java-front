@@ -1,0 +1,65 @@
+module trans/sig/java/classes/ClassDeclarations-sig
+
+imports
+  trans/sig/java/lexical/Identifiers-sig
+  trans/sig/java/lexical/Modifiers-sig
+  trans/sig/java/lexical/SemiColon-sig
+  trans/sig/java/types/ReferenceTypes-sig
+  trans/sig/java/classes/FieldDeclarations-sig
+  trans/sig/java/classes/MethodDeclarations-sig
+  trans/sig/java/classes/InstanceInitializers-sig
+  trans/sig/java/classes/StaticInitializers-sig
+  trans/sig/java/classes/EnumDeclarations-sig
+  trans/sig/java/classes/ConstructorDeclarations-sig
+  trans/sig/java/interfaces/Annotations-sig
+  trans/sig/java/interfaces/InterfaceDeclarations-sig
+  trans/sig/java/types/TypeVariable-sig
+
+signature
+
+  sorts
+    ClassDeclaration
+    NormalClassDeclaration
+    ClassModifier
+    TypeParameters
+    SuperClass
+    SuperInterfaces
+    ClassBodyDeclaration
+    ClassMemberDeclaration
+
+  constructors
+    ClassDeclaration-Plhdr : ClassDeclaration
+    NormalClassDeclaration-Plhdr : NormalClassDeclaration
+    ClassModifier-Plhdr : ClassModifier
+    TypeParameters-Plhdr : TypeParameters
+    SuperClass-Plhdr : SuperClass
+    SuperInterfaces-Plhdr : SuperInterfaces
+    ClassBodyDeclaration-Plhdr : ClassBodyDeclaration
+    ClassMemberDeclaration-Plhdr : ClassMemberDeclaration
+
+signature
+
+  constructors
+    NormalClassDeclaration2ClassDeclaration : NormalClassDeclaration -> ClassDeclaration
+    EnumDeclaration2ClassDeclaration : EnumDeclaration -> ClassDeclaration
+    ClassDeclaration : list(ClassModifier) * Id * list(TypeParameters) * list(SuperClass) * list(SuperInterfaces) * list(ClassBodyDeclaration) -> NormalClassDeclaration
+    Annotation2ClassModifier : Annotation -> ClassModifier
+    Public2ClassModifier : Public -> ClassModifier
+    Protected2ClassModifier : Protected -> ClassModifier
+    Private2ClassModifier : Private -> ClassModifier
+    Abstract2ClassModifier : Abstract -> ClassModifier
+    Static2ClassModifier : Static -> ClassModifier
+    Final2ClassModifier : Final -> ClassModifier
+    Strictfp2ClassModifier : Strictfp -> ClassModifier
+    TypeParameters : list(TypeParameter) -> TypeParameters
+    SuperClass : ClassType -> SuperClass
+    SuperInterface : list(ClassType) -> SuperInterfaces
+    ClassMemberDeclaration2ClassBodyDeclaration : ClassMemberDeclaration -> ClassBodyDeclaration
+    InstanceInitializer2ClassBodyDeclaration : InstanceInitializer -> ClassBodyDeclaration
+    StaticInitializer2ClassBodyDeclaration : StaticInitializer -> ClassBodyDeclaration
+    ConstructorDeclaration2ClassBodyDeclaration : ConstructorDeclaration -> ClassBodyDeclaration
+    FieldDeclaration2ClassMemberDeclaration : FieldDeclaration -> ClassMemberDeclaration
+    MethodDeclaration2ClassMemberDeclaration : MethodDeclaration -> ClassMemberDeclaration
+    ClassDeclaration2ClassMemberDeclaration : ClassDeclaration -> ClassMemberDeclaration
+    InterfaceDeclaration2ClassMemberDeclaration : InterfaceDeclaration -> ClassMemberDeclaration
+    SemiColon2ClassMemberDeclaration : SemiColon -> ClassMemberDeclaration

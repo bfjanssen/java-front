@@ -1,0 +1,30 @@
+module trans/java/literals/Main
+
+imports
+
+  trans/sig/java/literals/Main-sig
+
+  trans/java/literals/BooleanLiterals
+  trans/java/literals/CharacterLiterals
+  trans/java/literals/FloatingPointLiterals
+  trans/java/literals/IntegerLiterals
+  trans/java/literals/NullLiteral
+  trans/java/literals/StringLiterals
+
+
+rules // 3.10. Literals
+
+  litOk : scope * Literal -> TYPE
+
+  litOk(s, IntLiteral2Literal(intLit)) = intLitOk(intLit).
+
+  litOk(s, FloatLiteral2Literal(floatLit)) = floatLitOk(floatLit).
+
+  litOk(s, BoolLiteral2Literal(boolLit)) = boolLitOk(boolLit).
+
+  litOk(s, CharacterLiteral2Literal(charLit)) = charLitOk(charLit).
+
+  litOk(s, StringLiteral2Literal(stringLit)) = stringLitOk(s, stringLit).
+
+  litOk(s, NullLiteral2Literal(nullLit)) = nullLitOk(nullLit).
+

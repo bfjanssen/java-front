@@ -1,0 +1,31 @@
+module trans/java/packages/CompilationUnits
+
+imports
+
+  trans/sig/java/packages/CompilationUnits-sig
+  trans/sig/java/Test-sig
+
+  trans/java/JRE
+  trans/java/names/Main
+  trans/java/names/PackageNames
+  trans/java/names/TypeNames
+  trans/java/packages/Main
+  trans/java/packages/ImportDeclarations
+  trans/java/packages/PackageDeclarations
+  trans/java/packages/TypeDeclarations
+
+
+rules // 7.3. Compilation Units
+
+  compilationUnitOk : scope * scope * CompilationUnit
+
+  compilationUnitOk(s_proj, s_pkg, CompilationUnit(pkgDeclOpt, importDeclList, typeDeclList)) :-
+  {s_cu}
+    new s_cu, s_cu -LEX-> s_proj,
+    pkgDeclOptOk(s_cu, pkgDeclOpt),
+    importJavaLang(s_proj, s_cu),
+    s_cu -IMPORT_PKG-> s_pkg,
+    importDeclListOk(s_proj, importDeclList, s_cu),
+    typeDeclListOk(s_cu, typeDeclList, s_pkg),
+    true.
+

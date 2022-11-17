@@ -1,0 +1,27 @@
+module trans/sig/java/interfaces/InterfaceMethodDeclarations-sig
+
+imports
+  trans/sig/java/lexical/Modifiers-sig
+  trans/sig/java/classes/MethodDeclarations-sig
+  trans/sig/java/interfaces/Annotations-sig
+
+signature
+
+  sorts
+    InterfaceMethodDeclaration
+    InterfaceMethodModifier
+
+  constructors
+    InterfaceMethodDeclaration-Plhdr : InterfaceMethodDeclaration
+    InterfaceMethodModifier-Plhdr : InterfaceMethodModifier
+
+signature
+
+  constructors
+    AbstractMethodDec : list(InterfaceMethodModifier) * MethodHeader * MethodBody -> InterfaceMethodDeclaration
+    Annotation2InterfaceMethodModifier : Annotation -> InterfaceMethodModifier
+    Public2InterfaceMethodModifier : Public -> InterfaceMethodModifier
+    Abstract2InterfaceMethodModifier : Abstract -> InterfaceMethodModifier
+    Default2InterfaceMethodModifier : Default -> InterfaceMethodModifier
+    Static2InterfaceMethodModifier : Static -> InterfaceMethodModifier
+    Strictfp2InterfaceMethodModifier : Strictfp -> InterfaceMethodModifier

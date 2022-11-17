@@ -1,0 +1,23 @@
+module trans/sig/java/literals/FloatingPointLiterals-sig
+
+imports
+
+signature
+
+  sorts
+    FloatLiteral
+    DeciFloatLiteral = string
+    HexaFloatLiteral = string
+    DeciDoubleLiteral = string
+    HexaDoubleLiteral = string
+
+  constructors
+    FloatLiteral-Plhdr : FloatLiteral
+
+signature
+
+  constructors
+    DeciFloat : DeciFloatLiteral -> FloatLiteral
+    HexaFloat : HexaFloatLiteral -> FloatLiteral
+    DeciDouble : DeciDoubleLiteral -> FloatLiteral
+    HexaDouble : HexaDoubleLiteral -> FloatLiteral

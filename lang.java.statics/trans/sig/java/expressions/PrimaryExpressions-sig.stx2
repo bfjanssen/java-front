@@ -1,0 +1,29 @@
+module trans/sig/java/expressions/PrimaryExpressions-sig
+
+imports
+  trans/sig/java/literals/Main-sig
+  trans/sig/java/names/Names-sig
+  trans/sig/java/types/PrimitiveTypes-sig
+
+signature
+
+  sorts
+    ClassLiteral
+    Dims
+
+  constructors
+    ClassLiteral-Plhdr : ClassLiteral
+    Dims-Plhdr : Dims
+
+signature
+
+  constructors
+    Literal2Expression : Literal -> Expression
+    ClassLiteral2Expression : ClassLiteral -> Expression
+    This : Expression
+    QThis : TypeName -> Expression
+    TypeNameClassLiteral : TypeName * list(Dims) -> ClassLiteral
+    NumericTypeClassLiteral : NumericType * list(Dims) -> ClassLiteral
+    BooleanClassLiteral : list(Dims) -> ClassLiteral
+    VoidClassLiteral : ClassLiteral
+    Dimension : Dims

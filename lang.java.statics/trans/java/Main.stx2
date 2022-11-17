@@ -1,0 +1,16 @@
+module trans/java/Main
+
+imports
+
+  trans/java/arrays/Main
+  trans/java/classes/Main
+  trans/java/expressions/Main
+  trans/java/interfaces/Main
+  trans/java/literals/Main
+  trans/java/names/Main
+  trans/java/packages/Main
+  trans/java/statements/Main
+  trans/java/types/Main
+
+// The Java Language Specification
+// Java SE 8 Edition

@@ -1,0 +1,18 @@
+module trans/sig/java/arrays/ArrayInitializers-sig
+
+imports
+  trans/sig/java/classes/FieldDeclarations-sig
+
+signature
+
+  sorts
+    ArrayInitializer
+
+  constructors
+    ArrayInitializer-Plhdr : ArrayInitializer
+
+signature
+
+  constructors
+    ArrayInit : list(VariableInitializer) -> ArrayInitializer
+    ArrayInitComma : list(VariableInitializer) -> ArrayInitializer

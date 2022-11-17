@@ -1,0 +1,49 @@
+module trans/sig/java/lexical/Modifiers-sig
+
+imports
+
+signature
+
+  sorts
+    Abstract
+    Default
+    Final
+    Native
+    Private
+    Protected
+    Public
+    Static
+    Strictfp
+    Synchronized
+    Transient
+    Volatile
+
+  constructors
+    Abstract-Plhdr : Abstract
+    Default-Plhdr : Default
+    Final-Plhdr : Final
+    Native-Plhdr : Native
+    Private-Plhdr : Private
+    Protected-Plhdr : Protected
+    Public-Plhdr : Public
+    Static-Plhdr : Static
+    Strictfp-Plhdr : Strictfp
+    Synchronized-Plhdr : Synchronized
+    Transient-Plhdr : Transient
+    Volatile-Plhdr : Volatile
+
+signature
+
+  constructors
+    Abstract : Abstract
+    Default : Default
+    Final : Final
+    Native : Native
+    Private : Private
+    Protected : Protected
+    Public : Public
+    Static : Static
+    Strictfp : Strictfp
+    Transient : Transient
+    Volatile : Volatile
+    Synchronized : Synchronized

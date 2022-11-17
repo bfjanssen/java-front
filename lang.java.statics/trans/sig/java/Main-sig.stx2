@@ -1,0 +1,24 @@
+module trans/sig/java/Main-sig
+
+imports
+  trans/sig/java/arrays/Main-sig
+  trans/sig/java/classes/Main-sig
+  trans/sig/java/interfaces/Main-sig
+  trans/sig/java/lexical/Main-sig
+  trans/sig/java/literals/Main-sig
+  trans/sig/java/names/Main-sig
+  trans/sig/java/packages/Main-sig
+  trans/sig/java/statements/Main-sig
+  trans/sig/java/types/Main-sig
+  trans/sig/java/expressions/Main-sig
+  trans/sig/java/expressions/Disambiguation-sig
+
+signature
+
+  sorts
+
+  constructors
+
+signature
+
+  constructors

@@ -1,0 +1,26 @@
+module trans/java/expressions/Main
+
+imports
+
+  trans/sig/java/expressions/Main-sig
+
+  trans/java/expressions/ArrayAccess
+  trans/java/expressions/ArrayCreation
+  trans/java/expressions/AssignmentOperators
+  trans/java/expressions/BinaryOperators
+  trans/java/expressions/ClassInstanceCreation
+  trans/java/expressions/FieldAccess
+  trans/java/expressions/LambdaExpressions
+  trans/java/expressions/MethodInvocation
+  trans/java/expressions/MethodReference
+  trans/java/expressions/Postfix
+  trans/java/expressions/PrimaryExpressions
+  trans/java/expressions/UnaryOperators
+
+  trans/java/types/Main
+
+rules // Chapter 15. Expressions
+
+  exprOk : scope * Expression -> TYPE
+  exprOptOk maps exprOk(*, list(*)) = *
+  exprListOk maps exprOk(*, list(*)) = list(*)

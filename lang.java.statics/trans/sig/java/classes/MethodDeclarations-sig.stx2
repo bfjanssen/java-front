@@ -1,0 +1,75 @@
+module trans/sig/java/classes/MethodDeclarations-sig
+
+imports
+  trans/sig/java/classes/FieldDeclarations-sig
+  trans/sig/java/types/ReferenceTypes-sig
+  trans/sig/java/classes/ClassDeclarations-sig
+  trans/sig/java/lexical/Identifiers-sig
+  trans/sig/java/lexical/Modifiers-sig
+  trans/sig/java/interfaces/Annotations-sig
+  trans/sig/java/statements/Blocks-sig
+
+signature
+
+  sorts
+    MethodDeclaration
+    MethodHeader
+    Result
+    Throws
+    ExceptionType
+    MethodModifier
+    MethodBody
+    ReceiverParam
+    FormalParams
+    LastFormalParam
+    FormalParam
+    VariableModifier
+
+  constructors
+    MethodDeclaration-Plhdr : MethodDeclaration
+    MethodHeader-Plhdr : MethodHeader
+    Result-Plhdr : Result
+    Throws-Plhdr : Throws
+    ExceptionType-Plhdr : ExceptionType
+    MethodModifier-Plhdr : MethodModifier
+    MethodBody-Plhdr : MethodBody
+    ReceiverParam-Plhdr : ReceiverParam
+    FormalParams-Plhdr : FormalParams
+    LastFormalParam-Plhdr : LastFormalParam
+    FormalParam-Plhdr : FormalParam
+    VariableModifier-Plhdr : VariableModifier
+
+signature
+
+  constructors
+    MethodDecl : list(MethodModifier) * MethodHeader * MethodBody -> MethodDeclaration
+    MethodHeader : Result * Id * FormalParams * AnnotatedDimsEmpty * list(Throws) -> MethodHeader
+    MethodHeaderTypeParameters : TypeParameters * list(Annotation) * Result * Id * FormalParams * list(Throws) -> MethodHeader
+    UnannType2Result : UnannType -> Result
+    Void : Result
+    ThrowsDec : list(ExceptionType) -> Throws
+    ClassType2ExceptionType : ClassType -> ExceptionType
+    Annotation2MethodModifier : Annotation -> MethodModifier
+    Public2MethodModifier : Public -> MethodModifier
+    Protected2MethodModifier : Protected -> MethodModifier
+    Private2MethodModifier : Private -> MethodModifier
+    Abstract2MethodModifier : Abstract -> MethodModifier
+    Static2MethodModifier : Static -> MethodModifier
+    Final2MethodModifier : Final -> MethodModifier
+    Synchronized2MethodModifier : Synchronized -> MethodModifier
+    Native2MethodModifier : Native -> MethodModifier
+    Strictfp2MethodModifier : Strictfp -> MethodModifier
+    Block2MethodBody : Block -> MethodBody
+    NoMethodBody : MethodBody
+    ReceiverParamQual : list(Annotation) * UnannType * Id -> ReceiverParam
+    ReceiverParam : list(Annotation) * UnannType -> ReceiverParam
+    NoParams : FormalParams
+    ReceiverParam2FormalParams : ReceiverParam -> FormalParams
+    SingleParam : LastFormalParam -> FormalParams
+    ParamList : list(FormalParam) * LastFormalParam -> FormalParams
+    ReceiverParamList : ReceiverParam * list(FormalParam) * LastFormalParam -> FormalParams
+    FormalParam2LastFormalParam : FormalParam -> LastFormalParam
+    VarArityParam : list(VariableModifier) * UnannType * list(Annotation) * VarDeclId -> LastFormalParam
+    FormalParam : list(VariableModifier) * UnannType * VarDeclId -> FormalParam
+    Annotation2VariableModifier : Annotation -> VariableModifier
+    Final2VariableModifier : Final -> VariableModifier

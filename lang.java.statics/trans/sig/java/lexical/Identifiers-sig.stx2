@@ -1,0 +1,17 @@
+module trans/sig/java/lexical/Identifiers-sig
+
+imports
+
+signature
+
+  sorts
+    Id
+    ID = string
+
+  constructors
+    Id-Plhdr : Id
+
+signature
+
+  constructors
+    Id : ID -> Id

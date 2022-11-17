@@ -1,0 +1,22 @@
+module trans/sig/java/expressions/FieldAccess-sig
+
+imports
+  trans/sig/java/names/Names-sig
+  trans/sig/java/lexical/Identifiers-sig
+  trans/sig/java/expressions/Main-sig
+
+signature
+
+  sorts
+    FieldAccess
+
+  constructors
+    FieldAccess-Plhdr : FieldAccess
+
+signature
+
+  constructors
+    FieldAccess2Expression : FieldAccess -> Expression
+    Field : Expression * Id -> FieldAccess
+    SuperField : Id -> FieldAccess
+    QSuperField : TypeName * Id -> FieldAccess

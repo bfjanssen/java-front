@@ -1,0 +1,25 @@
+module trans/sig/java/interfaces/ConstantDeclarations-sig
+
+imports
+  trans/sig/java/lexical/Modifiers-sig
+  trans/sig/java/classes/FieldDeclarations-sig
+  trans/sig/java/interfaces/Annotations-sig
+
+signature
+
+  sorts
+    ConstantDeclaration
+    ConstantModifier
+
+  constructors
+    ConstantDeclaration-Plhdr : ConstantDeclaration
+    ConstantModifier-Plhdr : ConstantModifier
+
+signature
+
+  constructors
+    ConstantDecl : list(ConstantModifier) * UnannType * list(VarDecl) -> ConstantDeclaration
+    Annotation2ConstantModifier : Annotation -> ConstantModifier
+    Public2ConstantModifier : Public -> ConstantModifier
+    Static2ConstantModifier : Static -> ConstantModifier
+    Final2ConstantModifier : Final -> ConstantModifier

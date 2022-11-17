@@ -1,0 +1,66 @@
+module trans/sig/java/classes/FieldDeclarations-sig
+
+imports
+  trans/sig/java/lexical/Identifiers-sig
+  trans/sig/java/lexical/Modifiers-sig
+  trans/sig/java/types/ReferenceTypes-sig
+  trans/sig/java/types/PrimitiveTypes-sig
+  trans/sig/java/types/ParameterizedTypes-sig
+  trans/sig/java/interfaces/Annotations-sig
+  trans/sig/java/arrays/ArrayInitializers-sig
+  trans/sig/java/expressions/Main-sig
+
+signature
+
+  sorts
+    FieldDeclaration
+    VarDeclId
+    VarDecl
+    VariableInitializer
+    FieldModifier
+    UnannType
+    UnannPrimitiveType
+    UnannReferenceType
+    UnannClassType
+    UnannArrayType
+
+  constructors
+    FieldDeclaration-Plhdr : FieldDeclaration
+    VarDeclId-Plhdr : VarDeclId
+    VarDecl-Plhdr : VarDecl
+    VariableInitializer-Plhdr : VariableInitializer
+    FieldModifier-Plhdr : FieldModifier
+    UnannType-Plhdr : UnannType
+    UnannPrimitiveType-Plhdr : UnannPrimitiveType
+    UnannReferenceType-Plhdr : UnannReferenceType
+    UnannClassType-Plhdr : UnannClassType
+    UnannArrayType-Plhdr : UnannArrayType
+
+signature
+
+  constructors
+    FieldDecl : list(FieldModifier) * UnannType * list(VarDecl) -> FieldDeclaration
+    VariableDecl : Id -> VarDeclId
+    VariableDeclArray : Id * list(AnnotatedDim) -> VarDeclId
+    VariableDeclInit : VarDeclId * VariableInitializer -> VarDecl
+    VarDeclId2VarDecl : VarDeclId -> VarDecl
+    Expression2VariableInitializer : Expression -> VariableInitializer
+    ArrayInitializer2VariableInitializer : ArrayInitializer -> VariableInitializer
+    Annotation2FieldModifier : Annotation -> FieldModifier
+    Public2FieldModifier : Public -> FieldModifier
+    Protected2FieldModifier : Protected -> FieldModifier
+    Private2FieldModifier : Private -> FieldModifier
+    Static2FieldModifier : Static -> FieldModifier
+    Final2FieldModifier : Final -> FieldModifier
+    Transient2FieldModifier : Transient -> FieldModifier
+    Volatile2FieldModifier : Volatile -> FieldModifier
+    UnannPrimitiveType2UnannType : UnannPrimitiveType -> UnannType
+    UnannReferenceType2UnannType : UnannReferenceType -> UnannType
+    NumericType : NumericType -> UnannPrimitiveType
+    BooleanType : UnannPrimitiveType
+    UnannClassType2UnannReferenceType : UnannClassType -> UnannReferenceType
+    UnannArrayType2UnannReferenceType : UnannArrayType -> UnannReferenceType
+    ClassType : Id * list(TypeArguments) -> UnannClassType
+    UnannClassOrInterfaceTypeMember : UnannClassType * list(Annotation) * Id * list(TypeArguments) -> UnannClassType
+    UnannArrayTypePrimitive : UnannPrimitiveType * list(AnnotatedDim) -> UnannArrayType
+    UnannArrayTypeClassType : UnannClassType * list(AnnotatedDim) -> UnannArrayType
